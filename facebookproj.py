@@ -1,4 +1,3 @@
-
 posts=[]
 users=[]
 comments=[]
@@ -20,54 +19,68 @@ class User(object):
 		self.friends_list.remove(email)
 		print (self.name + " has removed " + email + " as a friend.")
 
-	def add_post (self,p_text,date):
-		post1=Post(p_text,date,self)
+	def add_post (self,p_text,date,likes,title):
+		post1=Post(p_text,date,likes,self.email,title)
 		posts.append(post1)
 		print (self.name + " has posted: " + p_text  + " on the date " + date)
+
+	def create_comment(self,text,date,likes,title):
+		for x in posts:
+			if title == x.title:
+				pst=x.title
+		comment1=Comment(text,date,likes,self,pst)
+		comments.append(comment1)
+		print(self.name + " has commented " + text + " on the post " + pst)
 
 	def get_userInfo (self):
 		my_posts=[]
 		for x in posts:
-			if self == x.author:
-				my_posts.append(x)
-		print("Name: ["+self.name+"]"+"Email: ["+self.email+"]"+"Password: ["+self.password+"]")
-		print("Friends: "+str(self.friends_list)+'Posts: '+str(my_posts))
+			if self.email == x.author:
+				my_posts.append(x.title)
+		print("Name: ["+self.name+"]"+"\nEmail: ["+self.email+"]"+"\nPassword: ["+self.password+"]")
+		print("Friends: "+str(self.friends_list)+'\nPosts: '+str(my_posts))
 
 class Post(object):
-	def __init__ (self,p_text,date,author):		
+	def __init__ (self,text,date,likes,author,title):		
 		self.author=author
-		self.text=p_text
+		self.text=text
 		self.date=date
-
-	def create_comment(self,c_text,date,author):
-		comment1=Comment(c_text,date,self)
-		comments.append(comment1)
-		print("has posted" + self.c_text)
+		self.likes=likes
+		self.title=title
+	
 
 	def remove_comment(self):
-		self.comments.remove(c_text)
+		self.comments.remove(text)
 
-	"""
-	def post_date(self):
-		print("the post was posted on "+ self.date)
-
-	def edit_comment(self,new_c_text):
-		self.c_text=new_c_text
-		print("the comment has been changed:")
-	def __repr__(self):
-		return self.text
-		"""
+	def add_like(self,likes):
+		likes=likes+1
+		print("likes" + str(likes))
 
 class Comment(Post):
-	def __init__(self):
-		Post.__init__(self)
-		self.c_text=c_text
+	def __init__(self,text,date,likes,author,title):
+		Post.__init__(self,text,date,likes,author,title)
+		self.text=text
 		
 
 user1 = User("jesus","jesus@meet.mit.edu", "imalive")
 user2 = User("moses","moses@meet.mit.edu", "imdead")
+
+iemail=input("what is your email?")
+ipass = input("what is your password?")
+for x in users:
+	if iemail == x.email and ipass == x.password:
+		print(x.name + "you are logged in!")
+	else:
+		quit()
+
+
+
+
+
 user2.add_friend("jesus@meet.mit.edu")
-user1.add_post("whats up?","10.5.0")
+user1.add_post("whats up?","10.5.0",2,"thepost")
 user1.get_userInfo()	
 user2.get_userInfo()
 user2.remove_friend("jesus@meet.mit.edu")
+
+user1.create_comment("lejfmdirkejs","5.2.2002",64,"thepost")
