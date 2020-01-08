@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script>
+			console.log("hello world");
+			var BirthYear = parseInt(prompt("in what year were you born?"));
+			var LuckyNumber = parseInt(prompt("what is your lucky number?"));
+			var FavFruit = prompt("what is your favorite fruit?");
+			var FavSubject = prompt("what is your favorite subject?");
+			
+			alert("your Birth Year + your Lucky Number = " + BirthYear + LuckyNumber);
+			alert("your Birth Year + your Favorite Subject = " + BirthYear + FavSubject);
+			alert("your favorite fruit + your birth year + your lucky number = " +FavFruit + (BirthYear + LuckyNumber));
+			alert("your birth year + your lucky number + your favorite subject = " + (BirthYear + LuckyNumber) + FavSubject);
+
+			function turn() {
+				var num = prompt("choose a number between 1 and 9");
+				if (num == 1 || num == 2 || num == 3 || num==4 || num==5 || num==6 || num==7 || num==8 || num==9){
+				num.trim();
+				parseInt(num);
+				}
+
+			}
+			
+		</script>
+</head>
+</html>
