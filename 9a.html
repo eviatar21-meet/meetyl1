@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<h1 align=center id="q"> <font color="red"> you are holding the wierd square shaped yellow thing in your hands,<br> and suddanly you are REALLY hungry. <br> do you eat it?</font> </h1>
+	<h1 id=1> yes</h1>
+	<h1 id=2> no</h1>
+	<script>
+		document.getElementById(1).onclick = function(){document.getElementById(1).innerHTML="you died";
+		document.getElementById(2).innerHTML="you died";
+		document.getElementById("q").innerHTML="you died";
+		document.getElementById("P1").src="D.jpg";
+	}
+		document.getElementById(2).onclick = function(){window.location.href="1.html"}
+	</script>
+</head>
+<body style="background-image:url('general.jpg')">
+	<img src="9.1.png" width=600 height=600 align="center" id="P1">
+</body>
+</html>

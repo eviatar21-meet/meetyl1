@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<h1 align=center id="q"> <font color="red"> you entered the room, and you realize its the control room.<br> there is a big screen where you can choose where to fly. <br> what do you choose?</font> </h1>
+	<h1 id=1> option number 1</h1>
+	<h1 id=2> option number 2</h1>
+	<script>
+		document.getElementById(1).onclick = function(){document.getElementById(1).innerHTML="you got to earth"
+		document.getElementById(2).innerHTML="you got to earth"
+		document.getElementById("q").innerHTML="you got to earth"
+		document.getElementById("P1").src="E.gif"
+	}
+		document.getElementById(2).onclick = function(){window.location.href="5.html"}
+	</script>
+</head>
+<body style="background-image:url('general.jpg')">
+	<img src="10.1.jpg" width=600 height=600 align="center" id="P1">
+</body>
+</html>

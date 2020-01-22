@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<script>
-			console.log("hello world");
-			var BirthYear = parseInt(prompt("in what year were you born?"));
-			var LuckyNumber = parseInt(prompt("what is your lucky number?"));
-			var FavFruit = prompt("what is your favorite fruit?");
-			var FavSubject = prompt("what is your favorite subject?");
-			
-			alert("your Birth Year + your Lucky Number = " + BirthYear + LuckyNumber);
-			alert("your Birth Year + your Favorite Subject = " + BirthYear + FavSubject);
-			alert("your favorite fruit + your birth year + your lucky number = " +FavFruit + (BirthYear + LuckyNumber));
-			alert("your birth year + your lucky number + your favorite subject = " + (BirthYear + LuckyNumber) + FavSubject);
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<h1 align=center> <font color="red"> you wake up in a spaceship, and there are two paths.<br> which one do you choose? </font> </h1>
+	<h1 id=1 align="left"> left</h1>
+	<h1 id=2 align="right"> right</h1>
+	<script>
 
-			function turn() {
-				var num = prompt("choose a number between 1 and 9");
-				if (num == 1 || num == 2 || num == 3 || num==4 || num==5 || num==6 || num==7 || num==8 || num==9){
-				num.trim();
-				parseInt(num);
-				}
+		document.getElementById(1).onclick = function(){window.location.href="2.html";}
+		document.getElementById(2).onclick = function(){window.location.href="3.html";}
 
-			}
-			
-		</script>
+	</script>
 </head>
+<body style="background-image:url('general.jpg')">
+	<img src="1.1.jpg" width="600" height="600" align="right">
+	<img src="1.2.jpg" width="600" height="600" align="left" style="webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: 'FlipH';">
+</body>
 </html>

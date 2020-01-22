@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="functions.js"></script>
+	<h1 align=center id="q"> <font color="red"> the aliens saw you,<br> and they start screaming and pointing the big wierd guns at you. <br> you still have a chance to run away. DO YOU?</font> </h1>
+	<h1 id=1> keep going</h1>
+	<h1 id=2> run away</h1>
+<canvas id="myCanvas" style="z-index: -1; position: absolute; top:0; left:0; width:100%; height:100% border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+	<script>
+		document.getElementById(1).onclick = function(){document.getElementById(1).innerHTML="you died";
+		document.getElementById(2).innerHTML="you died";
+		document.getElementById("q").innerHTML="you died";
+		document.getElementById("P1").src="D.jpg";
+		document.getElementById("P2").src="D.jpg";
+		draw(100,75,1,1);
+	}
+		document.getElementById(2).onclick = function(){window.location.href="1.html"}
+	</script>
+</head>
+<body style="background-image:url('general.jpg')">
+	<img src="4.1.png" width=600 height=600 align="right" id="P1">
+	<img src="4.2.png" width=600 height=600 align="left" id="P2">
+</body>
+</html>
