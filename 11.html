@@ -2,6 +2,9 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="functions.js"></script>
+	<canvas id="myCanvas" style="z-index: -1; position: absolute; top:0; left:0; width:100%; height:100% border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
 	<h1 align=center id="q"> <font color="red"> you can see alot of buttons on the wall.<br> you can see that there are two main buttons. <br> which one do you press?</font> </h1>
 	<h1 id=1> red</h1>
 	<h1 id=2> blue</h1>
@@ -10,15 +13,17 @@
 		document.getElementById(2).innerHTML="you got to earth"
 		document.getElementById("q").innerHTML="you got to earth"
 		document.getElementById("P1").src="E.gif"
+		end("blue")
 	}
 		document.getElementById(2).onclick = function(){document.getElementById(1).innerHTML="you died";
 		document.getElementById(2).innerHTML="you died";
 		document.getElementById("q").innerHTML="you died";
 		document.getElementById("P1").src="D.jpg";
+		end("red")
 	}
 	</script>
 </head>
 <body style="background-image:url('general.jpg')">
-	<img src="11.1.jpg" width=600 height=600 align="center" id="P1">
+	<img src="11.1.jpg" width=600 height=600 align="middle" id="P1">
 </body>      
 </html>
